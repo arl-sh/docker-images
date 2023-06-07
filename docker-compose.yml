@@ -1,0 +1,12 @@
+version: "3"
+
+name: givepact
+
+services:
+  python3-alpine-pandas:
+    image: ghcr.io/arl-sh/python3-alpine-pandas:latest
+    build:
+      context: ./python3-alpine-pandas
+      platforms:
+        - linux/amd64
+        - linux/arm64
