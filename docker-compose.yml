@@ -7,6 +7,3 @@ services:
     image: ghcr.io/arl-sh/python3-alpine-pandas:latest
     build:
       context: ./python3-alpine-pandas
-      platforms:
-        - linux/amd64
-        - linux/arm64

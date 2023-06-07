@@ -29,4 +29,8 @@ jobs:
 
       - name: Build and push image
         run: |
-          docker compose build --push
+          docker buildx bake \
+            --push \
+            --set="*.platform=linux/amd64,linux/arm64" \
+            --set="*.cache-from=type=gha" \
+            --set="*.cache-to=type=gha,mode=max"
