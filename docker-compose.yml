@@ -3,8 +3,17 @@ version: "3"
 services:
   container-disk-debian12-cloud:
     image: au2001/container-disk-debian12-cloud:latest
-    build: ./container-disk-debian12-cloud
+    build:
+      context: ./container-disk-debian12-cloud
+      x-bake:
+        platforms:
+        - linux/amd64
+        - linux/arm64
 
   container-disk-windows11:
     image: au2001/container-disk-windows11:latest
-    build: ./container-disk-windows11
+    build:
+      context: ./container-disk-windows11
+      x-bake:
+        platforms:
+        - linux/amd64
