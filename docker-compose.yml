@@ -4,3 +4,7 @@ services:
   container-disk-debian12-cloud:
     image: au2001/container-disk-debian12-cloud:latest
     build: ./container-disk-debian12-cloud
+
+  container-disk-windows11:
+    image: au2001/container-disk-windows11:latest
+    build: ./container-disk-windows11
