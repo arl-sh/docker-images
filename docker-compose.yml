@@ -1,9 +1,6 @@
 version: "3"
 
-name: givepact
-
 services:
-  python3-alpine-pandas:
-    image: ghcr.io/arl-sh/python3-alpine-pandas:latest
-    build:
-      context: ./python3-alpine-pandas
+  container-disk-debian12-cloud:
+    image: au2001/container-disk-debian12-cloud:latest
+    build: ./container-disk-debian12-cloud
