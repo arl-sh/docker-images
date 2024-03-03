@@ -17,3 +17,11 @@ services:
       x-bake:
         platforms:
         - linux/amd64
+
+  container-disk-virtio-win:
+    image: au2001/container-disk-virtio-win:latest
+    build:
+      context: ./container-disk-virtio-win
+      x-bake:
+        platforms:
+        - linux/amd64
