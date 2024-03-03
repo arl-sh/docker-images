@@ -3,6 +3,7 @@
 SESSION_ID=`uuidgen`
 USER_AGENT='Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:123.0) Gecko/20100101 Firefox/123.0'
 URL_REGEX='href="(https://software\.download\.prss\.microsoft\.com/[^"]+)"'
+FILE_NAME="${1:-Win11_English.iso}"
 
 # Necessary request otherwise Microsoft rejects the next query
 curl -s "https://vlscppe.microsoft.com/tags?org_id=y6jn8c31&session_id=$SESSION_ID" -A "$USER_AGENT" -H 'Referer: https://www.microsoft.com/' -H 'Upgrade-Insecure-Requests: 1' -H 'Sec-Fetch-Dest: iframe' -H 'Sec-Fetch-Mode: navigate' -H 'Sec-Fetch-Site: same-site' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' > /dev/null
@@ -20,4 +21,4 @@ fi
 
 URL="${BASH_REMATCH[1]}"
 
-curl -s -o Win11_English.iso "$URL"
+curl -s -o "$FILE_NAME" "$URL"
